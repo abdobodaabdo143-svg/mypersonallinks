@@ -24,9 +24,7 @@
             --radius: 22px;
         }
 
-        * {
-            box-sizing: border-box;
-        }
+        * { box-sizing: border-box; }
 
         body {
             margin: 0;
@@ -35,14 +33,14 @@
             place-items: center;
             font-family: "Segoe UI",Tahoma,sans-serif;
             color: var(--text);
-            background: radial-gradient(900px 420px at 20% 10%, rgba(56,189,248,.25), transparent 55%), radial-gradient(700px 380px at 80% 20%, rgba(34,197,94,.18), transparent 55%), linear-gradient(180deg,var(--bg1),var(--bg2));
+            background:
+              radial-gradient(900px 420px at 20% 10%, rgba(56,189,248,.25), transparent 55%),
+              radial-gradient(700px 380px at 80% 20%, rgba(34,197,94,.18), transparent 55%),
+              linear-gradient(180deg,var(--bg1),var(--bg2));
             padding: 28px 14px;
         }
 
-        .wrap {
-            width: 100%;
-            max-width: 460px;
-        }
+        .wrap { width: 100%; max-width: 460px; }
 
         .card {
             position: relative;
@@ -54,18 +52,17 @@
             overflow: hidden;
         }
 
-            .card::before {
-                content: "";
-                position: absolute;
-                inset: -2px -2px auto -2px;
-                height: 120px;
-                background: linear-gradient(90deg,rgba(56,189,248,.35),rgba(34,197,94,.25));
-                filter: blur(18px);
-                opacity: .7;
-                pointer-events: none;
-            }
+        .card::before {
+            content: "";
+            position: absolute;
+            inset: -2px -2px auto -2px;
+            height: 120px;
+            background: linear-gradient(90deg,rgba(56,189,248,.35),rgba(34,197,94,.25));
+            filter: blur(18px);
+            opacity: .7;
+            pointer-events: none;
+        }
 
-        /* ===== Header Centered ===== */
         .header {
             position: relative;
             padding: 32px 22px 18px;
@@ -84,13 +81,13 @@
             background: linear-gradient(135deg,var(--accent),var(--accent2));
         }
 
-            .avatar img {
-                width: 100%;
-                height: 100%;
-                border-radius: 18px;
-                object-fit: cover;
-                background: #020617;
-            }
+        .avatar img {
+            width: 100%;
+            height: 100%;
+            border-radius: 18px;
+            object-fit: cover;
+            background: #020617;
+        }
 
         .title h1 {
             margin: 0;
@@ -110,23 +107,24 @@
             margin: 0 22px;
         }
 
-        .section {
-            padding: 16px 22px 6px;
-        }
+        .section { padding: 16px 22px 6px; }
 
-            .section h2 {
-                font-size: 12px;
-                letter-spacing: 1px;
-                color: var(--muted);
-                margin-bottom: 10px;
-                text-transform: uppercase;
-            }
+        .section h2 {
+            font-size: 12px;
+            letter-spacing: 1px;
+            color: var(--muted);
+            margin-bottom: 10px;
+            text-transform: uppercase;
+        }
 
         .skills {
             display: flex;
             flex-wrap: wrap;
             gap: 8px;
             justify-content: center;
+            padding: 0;
+            margin: 0;
+            list-style: none;
         }
 
         .chip {
@@ -164,12 +162,13 @@
             background: rgba(2,6,23,.6);
             border: 1px solid rgba(255,255,255,.12);
             transition: .2s;
+            cursor: pointer;
         }
 
-            .btn:hover {
-                transform: translateY(-2px);
-                border-color: var(--accent);
-            }
+        .btn:hover {
+            transform: translateY(-2px);
+            border-color: var(--accent);
+        }
 
         .left {
             display: flex;
@@ -197,105 +196,163 @@
 </head>
 
 <body>
-    <main class="wrap">
-        <section class="card" aria-label="Developer profile card">
+<main class="wrap">
+    <section class="card" aria-label="Developer profile card">
 
-            <!-- Header -->
-            <div class="header">
-                <div class="avatar">
-                    <img src="profile.jpg" alt="Profile Picture">
+        <!-- Header -->
+        <div class="header">
+            <div class="avatar">
+                <img src="profile.jpg" alt="Profile Picture">
+            </div>
+
+            <div class="title">
+                <h1>Abdullah</h1>
+                <p>Software Developer • IT Engineer</p>
+            </div>
+        </div>
+
+        <div class="divider"></div>
+
+        <!-- Skills -->
+        <div class="section">
+            <h2>Skills</h2>
+            <ul class="skills">
+                <li class="chip"><span class="dot"></span>HTML</li>
+                <li class="chip"><span class="dot"></span>JavaScript</li>
+                <li class="chip"><span class="dot"></span>C++</li>
+                <li class="chip"><span class="dot"></span>Python</li>
+            </ul>
+        </div>
+
+        <!-- Links -->
+        <div class="links">
+
+            <!-- ✅ زرار حفظ البيانات (Contact vCard) -->
+            <button class="btn" id="saveContactBtn" type="button" aria-label="حفظ البيانات كجهة اتصال">
+                <div class="left">
+                    <div class="ico"><i class="fa-solid fa-address-card"></i></div>
+                    <div class="label">
+                        <strong>حفظ البيانات</strong>
+                    </div>
                 </div>
+                <i class="fa-solid fa-download arrow"></i>
+            </button>
 
-                <div class="title">
-                    <h1>Abdullah</h1>
-                    <p>Software Developer • IT Engineer</p>
+            <a class="btn" href="https://www.linkedin.com/in/abdullh-hussien-4b5ba2399" target="_blank" rel="noopener noreferrer">
+                <div class="left">
+                    <div class="ico"><i class="fa-brands fa-linkedin-in"></i></div>
+                    <div class="label">
+                        <strong>LinkedIn</strong>
+                    </div>
                 </div>
-            </div>
+                <i class="fa-solid fa-arrow-left arrow"></i>
+            </a>
 
-            <div class="divider"></div>
-
-            <!-- Skills -->
-            <div class="section">
-                <h2>Skills</h2>
-                <ul class="skills">
-                    <li class="chip"><span class="dot"></span>HTML</li>
-                    <li class="chip"><span class="dot"></span>JavaScript</li>
-                    <li class="chip"><span class="dot"></span>C++</li>
-                    <li class="chip"><span class="dot"></span>Python</li>
-                </ul>
-            </div>
-
-            <!-- Links -->
-            <div class="links">
-                <a class="btn" href="https://www.linkedin.com/in/abdullh-hussien-4b5ba2399" target="_blank" rel="noopener noreferrer">
-                    <div class="left">
-                        <div class="ico"><i class="fa-brands fa-linkedin-in"></i></div>
-                        <div class="label">
-                            <strong>LinkedIn</strong>
-                           
-                        </div>
+            <a class="btn" href="https://wa.me/201123706024" target="_blank" rel="noopener noreferrer">
+                <div class="left">
+                    <div class="ico"><i class="fa-brands fa-whatsapp"></i></div>
+                    <div class="label">
+                        <strong>WhatsApp</strong>
                     </div>
-                    <i class="fa-solid fa-arrow-left arrow"></i>
-                </a>
+                </div>
+                <i class="fa-solid fa-arrow-left arrow"></i>
+            </a>
 
-                <a class="btn" href="https://wa.me/201123706024" target="_blank" rel="noopener noreferrer">
-                    <div class="left">
-                        <div class="ico"><i class="fa-brands fa-whatsapp"></i></div>
-                        <div class="label">
-                            <strong>WhatsApp</strong>
-                          
-                        </div>
+            <a class="btn" href="mailto:hsynbdallh778@gmail.com">
+                <div class="left">
+                    <div class="ico"><i class="fa-solid fa-envelope"></i></div>
+                    <div class="label">
+                        <strong>Email</strong>
                     </div>
-                    <i class="fa-solid fa-arrow-left arrow"></i>
-                </a>
+                </div>
+                <i class="fa-solid fa-arrow-left arrow"></i>
+            </a>
 
-                <a class="btn" href="mailto:hsynbdallh778@gmail.com">
-                    <div class="left">
-                        <div class="ico"><i class="fa-solid fa-envelope"></i></div>
-                        <div class="label">
-                            <strong>Email</strong>
-                         
-                        </div>
+            <a class="btn" href="https://www.instagram.com/7nosignal7" target="_blank" rel="noopener noreferrer">
+                <div class="left">
+                    <div class="ico"><i class="fa-brands fa-instagram"></i></div>
+                    <div class="label">
+                        <strong>Instagram</strong>
                     </div>
-                    <i class="fa-solid fa-arrow-left arrow"></i>
-                </a>
+                </div>
+                <i class="fa-solid fa-arrow-left arrow"></i>
+            </a>
 
-                <a class="btn" href="https://www.instagram.com/7nosignal7" target="_blank" rel="noopener noreferrer">
-                    <div class="left">
-                        <div class="ico"><i class="fa-brands fa-instagram"></i></div>
-                        <div class="label">
-                            <strong>Instagram</strong>
-                          
-                        </div>
+            <a class="btn" href="https://x.com/Abdo56655" target="_blank" rel="noopener noreferrer">
+                <div class="left">
+                    <div class="ico"><i class="fa-brands fa-x-twitter"></i></div>
+                    <div class="label">
+                        <strong>X (Twitter)</strong>
                     </div>
-                    <i class="fa-solid fa-arrow-left arrow"></i>
-                </a>
+                </div>
+                <i class="fa-solid fa-arrow-left arrow"></i>
+            </a>
 
-                <a class="btn" href="https://x.com/Abdo56655" target="_blank" rel="noopener noreferrer">
-                    <div class="left">
-                        <div class="ico"><i class="fa-brands fa-x-twitter"></i></div>
-                        <div class="label">
-                            <strong>X (Twitter)</strong>
-
-                        </div>
+            <a class="btn" href="https://www.facebook.com/share/1D1WaT5HG5/" target="_blank" rel="noopener noreferrer">
+                <div class="left">
+                    <div class="ico"><i class="fa-brands fa-facebook-f"></i></div>
+                    <div class="label">
+                        <strong>Facebook</strong>
                     </div>
-                    <i class="fa-solid fa-arrow-left arrow"></i>
-                </a>
+                </div>
+                <i class="fa-solid fa-arrow-left arrow"></i>
+            </a>
+        </div>
 
-                <a class="btn" href="https://www.facebook.com/share/1D1WaT5HG5/" target="_blank" rel="noopener noreferrer">
-                    <div class="left">
-                        <div class="ico"><i class="fa-brands fa-facebook-f"></i></div>
-                        <div class="label">
-                            <strong>Facebook</strong>
-                           
-                        </div>
-                    </div>
-                    <i class="fa-solid fa-arrow-left arrow"></i>
-                </a>
-            </div>
+        <footer>© 2025 • Built by Abdullah</footer>
+    </section>
+</main>
 
-            <footer>© 2025 • Built by Abdullah</footer>
-        </section>
-    </main>
+<script>
+    // ====== إعدادات بياناتك (عدّلها براحتك) ======
+    const contact = {
+        firstName: "Abdullah",
+        lastName: "Hussien",
+        fullName: "Abdullah Hussien",
+        title: "Software Developer & IT Engineer",
+        phone: "+201123706024",
+        email: "hsynbdallh778@gmail.com",
+        website: "https://www.linkedin.com/in/abdullh-hussien-4b5ba2399"
+    };
+
+    // ====== توليد vCard + تحميله ======
+    function downloadVCard() {
+        // مهم: نستخدم CRLF \r\n عشان توافق أحسن مع أجهزة كتير
+        const vcf =
+            "BEGIN:VCARD\r\n" +
+            "VERSION:3.0\r\n" +
+            `N:${escapeVCard(contact.lastName)};${escapeVCard(contact.firstName)};;;\r\n` +
+            `FN:${escapeVCard(contact.fullName)}\r\n` +
+            `TITLE:${escapeVCard(contact.title)}\r\n` +
+            `TEL;TYPE=CELL:${escapeVCard(contact.phone)}\r\n` +
+            `EMAIL:${escapeVCard(contact.email)}\r\n` +
+            `URL:${escapeVCard(contact.website)}\r\n` +
+            "END:VCARD\r\n";
+
+        const blob = new Blob([vcf], { type: "text/vcard;charset=utf-8" });
+        const url = URL.createObjectURL(blob);
+
+        const a = document.createElement("a");
+        a.href = url;
+        a.download = "Abdullah.vcf";
+        document.body.appendChild(a);
+        a.click();
+
+        // تنظيف
+        a.remove();
+        URL.revokeObjectURL(url);
+    }
+
+    // هروب بسيط للقيم
+    function escapeVCard(value) {
+        return String(value || "")
+            .replace(/\n/g, "\\n")
+            .replace(/,/g, "\\,")
+            .replace(/;/g, "\\;");
+    }
+
+    document.getElementById("saveContactBtn").addEventListener("click", downloadVCard);
+</script>
+
 </body>
 </html>
